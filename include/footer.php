@@ -11,6 +11,7 @@
     </footer>
     
     <script src="../js/slide.js" ></script>
-    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 </body>
 </html>

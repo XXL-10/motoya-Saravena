@@ -7,6 +7,8 @@
     <title>MotosYa Saravena</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> 
+
 </head>
 
 <body class="bg-gradient-to-b from-white to-orange-600">
@@ -29,3 +31,6 @@
             </nav>
         </div>
     </header>
+
+
+    
