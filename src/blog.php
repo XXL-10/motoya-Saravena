@@ -21,7 +21,7 @@
 
     <!-- Repite el bloque <article> para cada artículo en la página -->
     <!-- Ejemplo adicional -->
-    <article class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <article class="bg-white shadow-lg rounded-lg overflow-hidden" id="my-popover" popover>
       <img src="../img/moto_articulo2.jpg" alt="Imagen del artículo" class="w-full h-48 object-cover">
       <div class="p-6">
         <h2 class="text-2xl font-semibold text-gray-800 mb-2">Otro Título del Artículo</h2>
@@ -29,6 +29,8 @@
         <a href="articulo.php?id=2" class="text-orange-600 hover:text-orange-800 font-medium">Leer más &rarr;</a>
       </div>
     </article>
+
+    <button popovertarget="my-popover">leer mas</button>
 
     <!-- Continúa agregando más artículos según sea necesario -->
   </section>
