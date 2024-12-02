@@ -1,5 +1,5 @@
-<?php 
-include './head.php'; 
+<?php
+include './head.php';
 include '../../conexion/conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     '" . (isset($imagenes_caracteristicas[0]) ? $imagenes_caracteristicas[0] : '') . "', 
                     '" . (isset($imagenes_caracteristicas[1]) ? $imagenes_caracteristicas[1] : '') . "', 
                     '" . (isset($imagenes_caracteristicas[2]) ? $imagenes_caracteristicas[2] : '') . "')";
-    
+
     if (mysqli_query($conexion, $sql)) {
         // Redirigir a la misma página para recargar los datos
         header("Location: " . $_SERVER['PHP_SELF']);
@@ -132,67 +132,67 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <main class="py-8 px-4 bg-gray-300 rounded" id="my-popover" popover>
     <h2 class="text-xl font-semibold mb-6">Crear un nuevo anuncio</h2>
     <form method="POST" enctype="multipart/form-data">
-    <div class="grid grid-cols-3">
-        <div class="mb-4">
-            <label for="moto" class="block text-lg font-medium">Moto</label>
-            <input type="text" id="moto" name="moto" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
-        </div>
-        <div class="mb-4">
-            <label for="marca" class="block text-lg font-medium">Marca</label>
-            <input type="text" id="marca" name="marca" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
-        </div>
-        <div class="mb-4">
-            <label for="modelo" class="block text-lg font-medium">Modelo</label>
-            <input type="text" id="modelo" name="modelo" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
-        </div>
-        <div class="mb-4">
-            <label for="precio" class="block text-lg font-medium">Precio</label>
-            <input type="number" id="precio" name="precio" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
-        </div>
-        <div class="mb-4">
-            <label for="kilometraje" class="block text-lg font-medium">Kilometraje</label>
-            <input type="number" id="kilometraje" name="kilometraje" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
-        </div>
-        <div class="mb-4">
-            <label for="estado" class="block text-lg font-medium">Estado</label>
-            <input type="text" id="estado" name="estado" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
-        </div>
-        <div class="mb-4">
-            <label for="color" class="block text-lg font-medium">Color</label>
-            <input type="text" id="color" name="color" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
-        </div>
-        <div class="mb-4">
-            <label for="cilindraje" class="block text-lg font-medium">Cilindraje</label>
-            <input type="text" id="cilindraje" name="cilindraje" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+        <div class="grid grid-cols-3">
+            <div class="mb-4">
+                <label for="moto" class="block text-lg font-medium">Moto</label>
+                <input type="text" id="moto" name="moto" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="marca" class="block text-lg font-medium">Marca</label>
+                <input type="text" id="marca" name="marca" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="modelo" class="block text-lg font-medium">Modelo</label>
+                <input type="text" id="modelo" name="modelo" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="precio" class="block text-lg font-medium">Precio</label>
+                <input type="number" id="precio" name="precio" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="kilometraje" class="block text-lg font-medium">Kilometraje</label>
+                <input type="number" id="kilometraje" name="kilometraje" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="estado" class="block text-lg font-medium">Estado</label>
+                <input type="text" id="estado" name="estado" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="color" class="block text-lg font-medium">Color</label>
+                <input type="text" id="color" name="color" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="cilindraje" class="block text-lg font-medium">Cilindraje</label>
+                <input type="text" id="cilindraje" name="cilindraje" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+            </div>
+
+            <!-- Campo para la imagen principal -->
+            <div class="mb-4">
+                <label for="imagen_principal" class="block text-lg font-medium">Imagen Principal</label>
+                <input type="file" id="imagen_principal" name="imagen_principal" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required accept="image/*">
+            </div>
+
+            <!-- Campos para las imágenes de características -->
+            <div class="mb-4">
+                <label for="imagen_caracteristica1" class="block text-lg font-medium">Imagen Característica 1</label>
+                <input type="file" id="imagen_caracteristica1" name="imagen_caracteristica1" class="w-full px-4 py-2 border border-gray-300 rounded-lg" accept="image/*">
+            </div>
+
+            <div class="mb-4">
+                <label for="imagen_caracteristica2" class="block text-lg font-medium">Imagen Característica 2</label>
+                <input type="file" id="imagen_caracteristica2" name="imagen_caracteristica2" class="w-full px-4 py-2 border border-gray-300 rounded-lg" accept="image/*">
+            </div>
+
+            <div class="mb-4">
+                <label for="imagen_caracteristica3" class="block text-lg font-medium">Imagen Característica 3</label>
+                <input type="file" id="imagen_caracteristica3" name="imagen_caracteristica3" class="w-full px-4 py-2 border border-gray-300 rounded-lg" accept="image/*">
+            </div>
         </div>
 
-        <!-- Campo para la imagen principal -->
-        <div class="mb-4">
-            <label for="imagen_principal" class="block text-lg font-medium">Imagen Principal</label>
-            <input type="file" id="imagen_principal" name="imagen_principal" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required accept="image/*">
-        </div>
-
-        <!-- Campos para las imágenes de características -->
-        <div class="mb-4">
-            <label for="imagen_caracteristica1" class="block text-lg font-medium">Imagen Característica 1</label>
-            <input type="file" id="imagen_caracteristica1" name="imagen_caracteristica1" class="w-full px-4 py-2 border border-gray-300 rounded-lg" accept="image/*">
-        </div>
-
-        <div class="mb-4">
-            <label for="imagen_caracteristica2" class="block text-lg font-medium">Imagen Característica 2</label>
-            <input type="file" id="imagen_caracteristica2" name="imagen_caracteristica2" class="w-full px-4 py-2 border border-gray-300 rounded-lg" accept="image/*">
-        </div>
-
-        <div class="mb-4">
-            <label for="imagen_caracteristica3" class="block text-lg font-medium">Imagen Característica 3</label>
-            <input type="file" id="imagen_caracteristica3" name="imagen_caracteristica3" class="w-full px-4 py-2 border border-gray-300 rounded-lg" accept="image/*">
-        </div>
-    </div>
-
-    <button type="submit" name="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition">
-        Crear Anuncio
-    </button>
-</form>
+        <button type="submit" name="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+            Crear Anuncio
+        </button>
+    </form>
 
 </main>
 

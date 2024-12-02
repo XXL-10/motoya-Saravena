@@ -8,7 +8,7 @@ if (isset($_POST['id'])) {
     $sql = "DELETE FROM anuncios WHERE id = $id";
 
     if (mysqli_query($conexion, $sql)) {
-        header("Location: ../main.php"); // Redirigir a la página principal después de eliminar
+        header("Location: ../main.php");
         exit();
     } else {
         echo "Error al eliminar el anuncio: " . mysqli_error($conexion);
